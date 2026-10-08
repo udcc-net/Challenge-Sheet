@@ -157,6 +157,7 @@ body {
   height: 40px;
   margin-top: 5px;
   cursor: pointer;
+  color: black;
 }
 
 .importexport {
@@ -284,6 +285,7 @@ body {
 
 .challengebutton {
   color: black;
+  background-color: white;
 }
 
 .challengebuttonbucket {
