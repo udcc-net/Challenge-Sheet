@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { challengeList }  from './Pointcalc.js'
 import filters from './filters.json';
 
-import soul from './img/red_soul.png';
+import udcc_logo from './img/udcc_logo.png';
 import {States, StatesToNumbers} from "./Pointcalc.js";
 
 function FilterCheckbox({id, checked, text, cat, updateFilter}) {
@@ -166,6 +166,10 @@ export default function Sidebar({importSelection, exportSelection, updateChallen
                 <ul>
                     <li id="filter">
                         <button onClick={() => setEnabled(false)} id="closebutton"><h1>X</h1></button>
+                        <div id="bottomtext">
+                            <img src={udcc_logo} alt="determination"></img>
+                            <p>Maintained by <a href="https://discord.gg/WVFcWXwT6A" target="_blank" rel="noreferrer">UDCC</a></p>
+                        </div>
                         <Searchbar searchText={searchText} updateSearchText={updateSearchText}/>
 
                         <h2>Filter by</h2>
@@ -184,10 +188,6 @@ export default function Sidebar({importSelection, exportSelection, updateChallen
                             <input id="fileUpload" type="file" onChange={handleFileUpload} hidden/>
                             <button className="importexportbutton" onClick={() => document.getElementById('fileUpload').click()}>Import</button>
                             <button className="importexportbutton" onClick={exportSelection}>Export</button>
-                        </div>
-
-                        <div id="bottomtext">
-                            <p>Made with <img src={soul} alt="determination"></img> for <a href="https://discord.gg/WVFcWXwT6A" target="_blank" rel="noreferrer">UDCC</a></p>
                         </div>
                     </li>
                 </ul>
