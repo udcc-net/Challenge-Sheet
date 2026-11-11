@@ -9,7 +9,6 @@
 * {
   box-sizing: border-box;
   font-family: '8bitoperator Regular', serif;
-  font-family: '8bitoperator Regular', serif;
   font-size: 12pt;
 }
 
@@ -50,8 +49,6 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -65,7 +62,6 @@ body {
 #sidenav #bottomtext {
   display: flex;
   justify-content: center;
-  padding-left: 0;
   padding-left: 0;
   align-items: end;
   margin-top: 20px;
@@ -111,7 +107,6 @@ body {
 }
 
 .catName {
-  margin: 15px 0 10px;
   margin: 15px 0 10px;
 }
 
@@ -284,7 +279,6 @@ body {
   cursor: pointer;
   opacity: 90%;
   font-size: 8pt;
-  font-family: '8bitoperator Regular', serif;
   font-family: '8bitoperator Regular', serif;
   line-height: 1.5;
   border: 3px hidden;
