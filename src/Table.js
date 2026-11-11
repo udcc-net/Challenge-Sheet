@@ -1,5 +1,3 @@
-import tiers from './tiers.json';
-
 function TableHeader({tier}) {
     return (<div style={{ background: '#' + tier.color}} className="challengeheader">
                 <div>
@@ -13,7 +11,7 @@ function TableHeader({tier}) {
 }
 
 function TableElement({name, state, onChallengeClick}) {
-    var cname = "challengebutton";
+    var cname;
     
     switch(state) {
         case 1: 
@@ -22,10 +20,9 @@ function TableElement({name, state, onChallengeClick}) {
         case 2: 
             cname = "challengebuttonbucket";
             break;
+        default:
+            cname = "challengebutton";
     }
-
-    // Backwards compatibility
-    if (state == 1) cname = "challengebuttonpressed";
 
     return (
         <div className="buttoncontainer">
@@ -40,15 +37,16 @@ function Column({onClick, challenges, pressed}) {
     return (
         <>
             {challenges.map((c) => {
-                let key = c.name;
+                let key = c.id;
+                let name = challenges.find((c) => c.id === key).name
                 if (!pressed.has(key)) pressed.set(key, 0);
-                return <TableElement key={key} name={key} state={pressed.get(key)} onChallengeClick={() => onClick(c)}/>
+                return <TableElement key={key} name={name} state={pressed.get(key)} onChallengeClick={() => onClick(c)}/>
             })}
         </>
     );
 }
 
-export default function Table({onClick, challenges, pressed}) {
+export default function Table({onClick, challenges, tiers, pressed}) {
     const columns = [];
     const headers = []
     tiers.forEach((t) => {

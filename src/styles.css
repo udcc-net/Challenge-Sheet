@@ -9,6 +9,7 @@
 * {
   box-sizing: border-box;
   font-family: '8bitoperator Regular', serif;
+  font-family: '8bitoperator Regular', serif;
   font-size: 12pt;
 }
 
@@ -27,22 +28,28 @@ body {
   margin: 0;
 }
 
+#root {
+  display: flex;
+  height: 100vh;
+}
+
 #sidenav {
-  z-index: 2;
-  height: 100%; 
-  width: 300px;
-  min-width: 250px; 
-  position: fixed; 
+  z-index: 1;
+  height: 100%;
+  width: 17%;
+  min-width: 300px;
   border-right: 1px solid #111;
   top: 0;
   margin: 0;
   background-color: black;
   color: white;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #sidenav ul {
   height: 100%;
+  padding: 0;
+  margin: 0;
   padding: 0;
   margin: 0;
   display: flex;
@@ -58,6 +65,7 @@ body {
 #sidenav #bottomtext {
   display: flex;
   justify-content: center;
+  padding-left: 0;
   padding-left: 0;
   align-items: end;
   margin-top: 20px;
@@ -104,6 +112,7 @@ body {
 
 .catName {
   margin: 15px 0 10px;
+  margin: 15px 0 10px;
 }
 
 #sidenav input {
@@ -112,7 +121,7 @@ body {
 }
 
 #sidenav #searchbar {
-  width: 200px;
+  width: 190px;
   margin: 0;
 }
 
@@ -146,6 +155,7 @@ body {
   justify-content: center;
   flex-direction: column;
   padding: 0;
+  padding: 0;
 }
 
 #sidebarbuttons button {
@@ -153,6 +163,13 @@ body {
   height: 40px;
   margin-top: 5px;
   cursor: pointer;
+  color: black;
+}
+
+.importexport {
+  display: flex;
+  width: 200px;
+  gap: 4px;
 }
 
 #sidenav .otherOption label {
@@ -176,7 +193,7 @@ body {
 #total h1 {
   text-align: center;
   vertical-align: middle;
-  font-size: 22pt;
+  font-size: 20pt;
   margin: 0;
 }
 
@@ -208,16 +225,17 @@ body {
 
 #challengepicker {
   margin: auto;
-  position: absolute;
+  padding: auto;
   text-align: center;
   height: 100%;
-  width: 100%;
-  overflow: auto;
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
   scrollbar-gutter: stable;
 }
 
 #tiertitles {
-  min-width: 1400px;
+  min-width: 1700px;
   display: flex;
   justify-content: space-evenly;
   margin-right: 10px;
@@ -229,7 +247,7 @@ body {
 }
 
 .challengeheader {
-  width: 150px;
+  width: 170px;
   padding: 10px 0;
   margin: 10px 0;
   font-weight: bold;
@@ -250,29 +268,31 @@ body {
   display: flex;
   justify-content: space-evenly;
   margin-right: 10px;
-  min-width: 1400px;
+  min-width: 1700px;
 }
 
 .column {
-  width: 150px;
+  width: 170px;
 }
 
 #challengepicker button {
-  width: 150px;
+  width: 170px;
   height: 70px;
   padding: 4px;
   margin: 5px 0;
-  border: 0;
   border-radius: 2px;
   cursor: pointer;
   opacity: 90%;
   font-size: 8pt;
   font-family: '8bitoperator Regular', serif;
+  font-family: '8bitoperator Regular', serif;
   line-height: 1.5;
+  border: 3px hidden;
 }
 
 .challengebutton {
   color: black;
+  background-color: white;
 }
 
 .challengebuttonbucket {
@@ -286,5 +306,18 @@ body {
 }
 
 .buttoncontainer {
-  width: 150px;
+  width: 170px;
+}
+
+#importexportbuttons {
+  padding: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.loadingtext {
+  color: white;
+  font-size: 30pt;
+  text-align: center;
 }
