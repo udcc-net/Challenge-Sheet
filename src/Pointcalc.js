@@ -177,8 +177,6 @@ function Pointometer() {
 function calcScore(selection) {
     let score = 0;
     let bucketScore = 0;
-    let score = 0;
-    let bucketScore = 0;
 
     if (selection !== null) {
         selection.forEach((c) => {
@@ -193,7 +191,6 @@ function calcScore(selection) {
     }
 
     return [score, bucketScore];
-}
 }
 
 export default function App() {
