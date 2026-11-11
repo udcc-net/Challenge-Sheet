@@ -8,7 +8,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: '8bitoperator Regular';
+  font-family: '8bitoperator Regular', serif;
   font-size: 12pt;
 }
 
@@ -23,8 +23,8 @@ html {
 }
 
 body {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 #sidenav {
@@ -43,8 +43,8 @@ body {
 
 #sidenav ul {
   height: 100%;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -58,7 +58,7 @@ body {
 #sidenav #bottomtext {
   display: flex;
   justify-content: center;
-  padding-left: 0px;
+  padding-left: 0;
   align-items: end;
   margin-top: 20px;
 }
@@ -103,7 +103,7 @@ body {
 }
 
 .catName {
-  margin: 15px 0px 10px;
+  margin: 15px 0 10px;
 }
 
 #sidenav input {
@@ -113,7 +113,7 @@ body {
 
 #sidenav #searchbar {
   width: 200px;
-  margin: 0px;
+  margin: 0;
 }
 
 #sidenav #filter {
@@ -145,7 +145,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0px;
+  padding: 0;
 }
 
 #sidebarbuttons button {
@@ -208,7 +208,6 @@ body {
 
 #challengepicker {
   margin: auto;
-  padding: auto;
   position: absolute;
   text-align: center;
   height: 100%;
@@ -231,8 +230,8 @@ body {
 
 .challengeheader {
   width: 150px;
-  padding: 10px 0px;
-  margin: 10px 0px;
+  padding: 10px 0;
+  margin: 10px 0;
   font-weight: bold;
   font-size: 15pt;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
@@ -262,13 +261,13 @@ body {
   width: 150px;
   height: 70px;
   padding: 4px;
-  margin: 5px 0px;
+  margin: 5px 0;
   border: 0;
   border-radius: 2px;
   cursor: pointer;
   opacity: 90%;
   font-size: 8pt;
-  font-family: '8bitoperator Regular';
+  font-family: '8bitoperator Regular', serif;
   line-height: 1.5;
 }
 

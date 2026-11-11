@@ -15,10 +15,10 @@ export const States = {
 const sortedChallenges = challengeList.sort((a, b) => a.name.localeCompare(b.name));
 
 function Pointometer() {
-    var selection = JSON.parse(localStorage.getItem("selection"));
+    let selection = JSON.parse(localStorage.getItem("selection"));
 
     //SCORE HANDLERS
-    var iniScore = calcScore(selection);
+    let iniScore = calcScore(selection);
     const [total, setTotal] = useState(iniScore[0]);
     const [bucketListScore, setBucketListScore] = useState(iniScore[1])
 
@@ -31,25 +31,23 @@ function Pointometer() {
     const [bucketList, setBucketList] = useState(false);
 
     function handleClick(challenge) {
-        var tmp = Array.from(pressed).slice();
-        var nextPressed = new Map(tmp);
+        let tmp = Array.from(pressed).slice();
+        let nextPressed = new Map(tmp);
 
-        var key = challenge.name;
-
-        var state = null;
-        handleClickRecursive(nextPressed, state, key);
+        let state = null;
+        handleClickRecursive(nextPressed, state, challenge.name);
 
         setPressed(nextPressed);
 
-        var selection = Array.from(nextPressed).filter(c => c[1] != States.Incomplete)
-        var score = calcScore(selection);
+        let selection = Array.from(nextPressed).filter(c => c[1] !== States.Incomplete)
+        let score = calcScore(selection);
         setTotal(score[0]);
         setBucketListScore(score[1]);
         localStorage.setItem("selection", JSON.stringify(selection))
     }
 
     function handleClickRecursive(nextPressed, state, key) {
-        var challenge = sortedChallenges.find(c => c.name === key);
+        let challenge = sortedChallenges.find(c => c.name === key);
         
         if (state == null) {
             switch (pressed.get(key)) {
@@ -81,7 +79,7 @@ function Pointometer() {
         
         if (dependencies && challenge.sub.length > 0) {
             challenge.sub.map((s) => {
-                var sub = sortedChallenges.find(s2 => s2.name == s);
+                let sub = sortedChallenges.find(s2 => s2.name === s);
                 handleClickRecursive(nextPressed, state, sub.name)
             })
         }
@@ -110,15 +108,15 @@ function Pointometer() {
 }
 
 function calcScore(selection) {
-    var score = 0;
-    var bucketScore = 0;
+    let score = 0;
+    let bucketScore = 0;
 
     if (selection !== null) {
         selection.forEach((c) => {
-            var challenge = sortedChallenges.find(ch => ch.name === c[0]);
+            let challenge = sortedChallenges.find(ch => ch.name === c[0]);
 
             if (challenge !== undefined) {
-                var value = tiers.find(t => t.name === challenge.tier).points;
+                let value = tiers.find(t => t.name === challenge.tier).points;
                 if (c[1] === States.Completed || c[1] === true) score += value;
                 else if (c[1] === States.Bucket_List) bucketScore += value; 
             }
@@ -127,10 +125,6 @@ function calcScore(selection) {
 
     return [score, bucketScore];
 }
-
-function challengeSort(a, b) {
-    return a.name.localeCompare(b.name);
-} 
 
 export default function App() {
     return <Pointometer />
